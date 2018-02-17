@@ -1,0 +1,9 @@
+F:\SD-workspace\SD1\SD1\bin\Debug\SD1.exe
+F:\SD-workspace\SD1\SD1\bin\Debug\SD1.pdb
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.csprojResolveAssemblyReference.cache
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.Properties.Resources.resources
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.csproj.GenerateResource.Cache
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.csproj.CoreCompileInputs.cache
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.exe
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.pdb
+F:\SD-workspace\SD1\SD1\obj\Debug\SD1.Calculator.resources
