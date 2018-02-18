@@ -166,7 +166,7 @@
             this.dot.Name = "dot";
             this.dot.Size = new System.Drawing.Size(50, 50);
             this.dot.TabIndex = 11;
-            this.dot.Text = ".";
+            this.dot.Text = ",";
             this.dot.UseVisualStyleBackColor = true;
             this.dot.Click += new System.EventHandler(this.Button_Operator);
             // 
@@ -239,7 +239,6 @@
             this.display.Size = new System.Drawing.Size(274, 46);
             this.display.TabIndex = 18;
             this.display.UseWaitCursor = true;
-            this.display.TextChanged += new System.EventHandler(this.display_TextChanged);
             // 
             // equalsBtn
             // 
@@ -249,6 +248,7 @@
             this.equalsBtn.TabIndex = 19;
             this.equalsBtn.Text = "=";
             this.equalsBtn.UseVisualStyleBackColor = true;
+            this.equalsBtn.Click += new System.EventHandler(this.equalsBtn_Click);
             // 
             // Calculator
             // 

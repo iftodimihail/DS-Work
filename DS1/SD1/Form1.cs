@@ -11,7 +11,129 @@ namespace SD1
 {
     public partial class Calculator : Form
     {
-        string input = string.Empty;
+        private bool dividedByZero = false;
+        private const char guardian = '#'; //a flag to know when you reached the bottom of the stack
+        private static char[] operators = { '+', '-', '*', '/', '^', '(' };
+
+        //Hashmap for operators in the expresion
+        private static Dictionary<char, int> opPriorityExpr = new Dictionary<char, int>()
+        {
+            {'#', -1},
+            {'+', 1}, {'-', 1},
+            {'*', 2}, {'/', 2},
+            {'^', 4},
+            {'(', 5}
+        };
+
+        //Hashmap for operators in the expresion in the Operators' Stack
+        private static Dictionary<char, int> opPriorityStack = new Dictionary<char, int>()
+        {
+            {'#', -1},
+            {'+', 1}, {'-', 1},
+            {'*', 2}, {'/', 2},
+            {'^', 3},
+            {'(', 0}
+        };
+
+        private string Postfix(string expr)
+        {
+            StringBuilder sb = new StringBuilder();
+            Stack<char> operatorStack = new Stack<char>();
+            operatorStack.Push(guardian);
+
+            foreach (char c in expr)
+            {
+                if (Char.IsDigit(c) || c == ',')
+                {
+                    sb.Append(c);
+                }
+
+                if (operators.Contains(c))
+                {
+                   sb.Append(' ');
+                    if (opPriorityExpr[c] <= opPriorityStack[operatorStack.Peek()])
+                    {
+                        sb.Append(operatorStack.Pop());
+                    sb.Append(' ');
+                    }
+                    operatorStack.Push(c);
+                }
+                else if (c == ')')
+                {
+                    while (operatorStack.Peek() != '(')
+                    {
+                        sb.Append(operatorStack.Pop());
+                        sb.Append(' ');
+                    }
+                    operatorStack.Pop();
+                }
+            } // end of foreach loop
+
+            while (operatorStack.Peek() != guardian)
+            {
+                sb.Append(' ');
+                sb.Append(operatorStack.Pop());
+                sb.Append(' ');
+            }
+            return sb.ToString().Trim();
+        }
+
+        private string Evaluate(string expr)
+        {
+            double nmb = 0.0;
+            //var chars = expr.ToCharArray();
+            var vals = expr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            Stack<double> operandStack = new Stack<double>();
+
+            foreach(string val in vals)
+            {
+                if (double.TryParse(val, out double a)) //verifies if val can be converted to double
+                {
+                    nmb = double.Parse(val);
+                    operandStack.Push(nmb);
+                }
+                else //means val is an operator
+                {
+                    string op = string.Empty;
+                    double firstOperand = operandStack.Pop();
+                    double secondOperand = operandStack.Pop();
+
+                    op = val;
+                    switch (op)
+                    {
+                        case "+":
+                            operandStack.Push(secondOperand + firstOperand);
+                            break;
+                        case "-":
+                            operandStack.Push(secondOperand - firstOperand);
+                            break;
+                        case "*":
+                            operandStack.Push(secondOperand * firstOperand);
+                            break;
+                        case "/":
+                            if(Math.Abs(firstOperand) <= 1e-5) // verifies if operand we try to devide by is close to 0
+                            {
+                                dividedByZero = true;
+                                operandStack.Push(0); //just so I don't get Empty stack
+                            }
+                            else
+                                operandStack.Push(secondOperand / firstOperand);
+                            break;
+                        case "^":
+                            operandStack.Push(Math.Pow(secondOperand, firstOperand));
+                            break;
+                    }
+                }
+            }
+            if (dividedByZero)
+            {
+                return "Devided by Zero";
+            }
+            else
+                return operandStack.Pop().ToString();
+        }
+
+
         public Calculator()
         {
             InitializeComponent();
@@ -24,7 +146,8 @@ namespace SD1
             Console.WriteLine(number);
             switch (number)
             {
-                case "1": display.Text += "1";
+                case "1":
+                    display.Text += "1";
                     break;
                 case "2":
                     display.Text += "2";
@@ -56,11 +179,6 @@ namespace SD1
             }
         }
 
-        private void display_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Button_Operator(object sender, EventArgs e)
         {
             string oprator = sender.ToString().Substring(sender.ToString().Length - 1, 1);
@@ -81,8 +199,8 @@ namespace SD1
                 case "^":
                     display.Text += "^";
                     break;
-                case ".":
-                    display.Text += ".";
+                case ",":
+                    display.Text += ",";
                     break;
                 case "(":
                     display.Text += "(";
@@ -91,6 +209,12 @@ namespace SD1
                     display.Text += ")";
                     break;
             }
+        }
+
+        private void equalsBtn_Click(object sender, EventArgs e)
+        {
+            display.Text = (Evaluate(Postfix(display.Text))).ToString();
+            dividedByZero = false;
         }
     }
 }
