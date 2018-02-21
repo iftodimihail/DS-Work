@@ -50,16 +50,19 @@ namespace SD1
 
                 if (operators.Contains(c))
                 {
-                   sb.Append(' ');
+                    if(c != '(')
+                        sb.Append(' ');
+
                     if (opPriorityExpr[c] <= opPriorityStack[operatorStack.Peek()])
                     {
                         sb.Append(operatorStack.Pop());
-                    sb.Append(' ');
+                        sb.Append(' ');
                     }
                     operatorStack.Push(c);
                 }
                 else if (c == ')')
                 {
+                    sb.Append(' ');
                     while (operatorStack.Peek() != '(')
                     {
                         sb.Append(operatorStack.Pop());
@@ -71,7 +74,6 @@ namespace SD1
 
             while (operatorStack.Peek() != guardian)
             {
-                sb.Append(' ');
                 sb.Append(operatorStack.Pop());
                 sb.Append(' ');
             }
@@ -111,7 +113,7 @@ namespace SD1
                             operandStack.Push(secondOperand * firstOperand);
                             break;
                         case "/":
-                            if(Math.Abs(firstOperand) <= 1e-5) // verifies if operand we try to devide by is close to 0
+                            if(Math.Abs(firstOperand) <= 1e-6) // verifies if operand we try to devide by is close to 0
                             {
                                 dividedByZero = true;
                                 operandStack.Push(0); //just so I don't get Empty stack
