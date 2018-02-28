@@ -1,0 +1,8 @@
+F:\DS-workspace\DS2\Asyncron\AsyncClient\bin\Debug\AsyncClient.exe
+F:\DS-workspace\DS2\Asyncron\AsyncClient\bin\Debug\AsyncClient.pdb
+F:\DS-workspace\DS2\Asyncron\AsyncClient\obj\Debug\AsyncClient.ClientForm.resources
+F:\DS-workspace\DS2\Asyncron\AsyncClient\obj\Debug\AsyncClient.csproj.GenerateResource.Cache
+F:\DS-workspace\DS2\Asyncron\AsyncClient\obj\Debug\AsyncClient.csproj.CoreCompileInputs.cache
+F:\DS-workspace\DS2\Asyncron\AsyncClient\obj\Debug\AsyncClient.exe
+F:\DS-workspace\DS2\Asyncron\AsyncClient\obj\Debug\AsyncClient.pdb
+F:\DS-workspace\DS2\Asyncron\AsyncClient\obj\Debug\AsyncClient.csprojResolveAssemblyReference.cache

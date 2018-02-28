@@ -1,0 +1,7 @@
+F:\DS-workspace\DS2\Asyncron\AsyncServer\bin\Debug\SocketServer.exe
+F:\DS-workspace\DS2\Asyncron\AsyncServer\bin\Debug\SocketServer.pdb
+F:\DS-workspace\DS2\Asyncron\AsyncServer\obj\Debug\SocketServer.SocketServerForm.resources
+F:\DS-workspace\DS2\Asyncron\AsyncServer\obj\Debug\AsyncServer.csproj.GenerateResource.Cache
+F:\DS-workspace\DS2\Asyncron\AsyncServer\obj\Debug\AsyncServer.csproj.CoreCompileInputs.cache
+F:\DS-workspace\DS2\Asyncron\AsyncServer\obj\Debug\SocketServer.exe
+F:\DS-workspace\DS2\Asyncron\AsyncServer\obj\Debug\SocketServer.pdb
