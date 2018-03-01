@@ -1,2 +1,2 @@
 # DS-Work
-Distributed Systems Course workplace
+Distributed Systems Course workspace
