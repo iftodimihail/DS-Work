@@ -1,0 +1,9 @@
+F:\DS-workspace\DS4\MathServer\MathClient\bin\Debug\MathClient.exe
+F:\DS-workspace\DS4\MathServer\MathClient\bin\Debug\MathClient.pdb
+F:\DS-workspace\DS4\MathServer\MathClient\bin\Debug\MathLibrary.dll
+F:\DS-workspace\DS4\MathServer\MathClient\bin\Debug\MathLibrary.pdb
+F:\DS-workspace\DS4\MathServer\MathClient\obj\Debug\MathClient.csprojResolveAssemblyReference.cache
+F:\DS-workspace\DS4\MathServer\MathClient\obj\Debug\MathClient.csproj.CoreCompileInputs.cache
+F:\DS-workspace\DS4\MathServer\MathClient\obj\Debug\MathClient.exe
+F:\DS-workspace\DS4\MathServer\MathClient\obj\Debug\MathClient.pdb
+F:\DS-workspace\DS4\MathServer\MathClient\bin\Debug\MathClient.exe.config

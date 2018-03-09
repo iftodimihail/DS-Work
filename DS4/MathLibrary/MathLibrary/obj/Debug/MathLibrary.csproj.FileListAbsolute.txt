@@ -1,0 +1,6 @@
+F:\DS-workspace\DS4\MathLibrary\MathLibrary\bin\Debug\MathLibrary.dll
+F:\DS-workspace\DS4\MathLibrary\MathLibrary\bin\Debug\MathLibrary.pdb
+F:\DS-workspace\DS4\MathLibrary\MathLibrary\obj\Debug\MathLibrary.csprojResolveAssemblyReference.cache
+F:\DS-workspace\DS4\MathLibrary\MathLibrary\obj\Debug\MathLibrary.csproj.CoreCompileInputs.cache
+F:\DS-workspace\DS4\MathLibrary\MathLibrary\obj\Debug\MathLibrary.dll
+F:\DS-workspace\DS4\MathLibrary\MathLibrary\obj\Debug\MathLibrary.pdb
